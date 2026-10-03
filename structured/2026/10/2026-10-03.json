@@ -1,0 +1,298 @@
+{
+  "id": "openai-brief-2026-10-03",
+  "date": "2026-10-03",
+  "coverage_window": {
+    "start": "2026-09-08",
+    "end": "2026-10-03",
+    "note": "初回テスト実行のため直近約4週間をバックフィル"
+  },
+  "generated_at": "2026-10-03T10:40:15+09:00",
+  "language": "ja",
+  "source_count": 6,
+  "developments": [
+    {
+      "product": "GPT-6.1 Sol / GPT-6 Astra",
+      "event": "GPT-6.1 Sol公開、Multi-agentベータ、GPT-6 Astra Ultrafast追加",
+      "event_type": "model_release",
+      "summary": "GPT-6.1 Solが複雑なコーディング・調査・Computer use向けに公開され、Responses APIでMulti-agentをベータ提供。GPT-6 AstraにはUltrafastサービス層が追加された。",
+      "enterprise_implication": "モデル固定ではなく、Luna/Sol/Astraとreasoning effort、速度層をワークロード別にルーティングする設計が重要になる。",
+      "use_cases": [
+        "複雑なコード変更",
+        "長時間調査",
+        "Computer useを含む業務自動化",
+        "低遅延の対話型AI"
+      ],
+      "technical_implications": [
+        "Responses API中心のtool calling",
+        "モデル/推論努力/速度層の動的ルーティング",
+        "Multi-agent評価"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://openai.com/index/devday-2026-recap/",
+        "https://openai.com/index/practical-guide-building-gpt-6/"
+      ],
+      "confidence": "high",
+      "under_the_radar": false,
+      "fact_basis": "OpenAI公式changelogおよびDevDay発表",
+      "analysis": "最上位モデル常用より、タスク別ルーティングがコスト最適化の中心になる。"
+    },
+    {
+      "product": "Agents API",
+      "event": "Agents API public betaにComputer useを追加",
+      "event_type": "platform_feature",
+      "summary": "managed Codex harness、durable sessions、context compaction、recovery、sandboxを備えるAgents APIに、OpenAI-hosted browserを使うComputer useが追加された。",
+      "enterprise_implication": "Agent runtimeの自前実装負荷が減り、企業側は権限・承認・監査・業務コンテキストに集中しやすくなる。",
+      "use_cases": [
+        "レガシーWeb業務自動化",
+        "長時間バックオフィス処理",
+        "調査から実行までのAgent workflow"
+      ],
+      "technical_implications": [
+        "API/MCP優先、Computer use fallback",
+        "durable session",
+        "sandbox境界",
+        "human approval"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://openai.com/index/devday-2026-recap/"
+      ],
+      "confidence": "high",
+      "under_the_radar": false,
+      "fact_basis": "OpenAI公式Agents API発表とAPI changelog",
+      "analysis": "LLM orchestration基盤がマネージドサービス化する方向が鮮明。"
+    },
+    {
+      "product": "ChatGPT Work / Codex / Teams",
+      "event": "Codex Cloud、Space、Pages、team tasks、@ChatGPTの企業利用拡張",
+      "event_type": "enterprise_collaboration",
+      "summary": "共有Codex環境、チームで使うSpace/Pages、定期team tasks、SlackおよびMicrosoft Teamsでの@ChatGPTが発表・展開された。",
+      "enterprise_implication": "ChatGPTが個人アシスタントから共有作業面と継続自動化レイヤーへ移行する。",
+      "use_cases": [
+        "チーム共有ナレッジ",
+        "週次プロジェクト更新",
+        "Slack/Teams内の社内AI",
+        "共有開発環境"
+      ],
+      "technical_implications": [
+        "管理者承認済み接続",
+        "共有taskの権限設計",
+        "workspace contextと個人権限の分離"
+      ],
+      "sources": [
+        "https://openai.com/index/devday-2026-recap/",
+        "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+        "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+      ],
+      "confidence": "high",
+      "under_the_radar": false,
+      "fact_basis": "OpenAI公式DevDayおよびBusiness/Enterprise release notes",
+      "analysis": "Teams/Slackを入口にChatGPT側でツール・知識・定期処理を共有する設計が現実的になる。"
+    },
+    {
+      "product": "Plugins / MCP Events",
+      "event": "Plugin extensionsとMCP Eventsによるイベント駆動automation",
+      "event_type": "integration_feature",
+      "summary": "Pluginsがサイドバー/インタラクティブパネル/ファイルビューアを持てるようになり、MCP Eventsを使って接続アプリのイベントからautomationを起動する方向が示された。",
+      "enterprise_implication": "プロンプト起点だけでなく、業務イベント起点でAgentを動かすアーキテクチャが採用しやすくなる。",
+      "use_cases": [
+        "新規タスク発生時の資料収集",
+        "CRMイベントからの下書き生成",
+        "社内業務アプリのChatGPT内UI"
+      ],
+      "technical_implications": [
+        "event-driven architecture",
+        "MCP server",
+        "plugin UI extension",
+        "permission-aware automation"
+      ],
+      "sources": [
+        "https://openai.com/index/devday-2026-recap/"
+      ],
+      "confidence": "high",
+      "under_the_radar": false,
+      "fact_basis": "OpenAI公式DevDay発表",
+      "analysis": "MCPをtool接続だけでなくevent delivery層として見る必要が出てくる。"
+    },
+    {
+      "product": "OpenAI API Platform / ChatGPT Admin",
+      "event": "API key lifecycle・SCIM・External Accessの統制強化",
+      "event_type": "governance",
+      "summary": "API key作成方式の組織/プロジェクト制御、key有効期限・最大寿命、API PlatformへのSCIM割り当て、ChatGPT Sites等のExternal Access制御が追加された。",
+      "enterprise_implication": "ID、credential lifecycle、外部接続、モデルアクセスを中央統制しやすくなる。",
+      "use_cases": [
+        "service account標準化",
+        "短寿命credential運用",
+        "部署単位のAPI Platform割当",
+        "外部公開/接続ポリシー"
+      ],
+      "technical_implications": [
+        "SCIM/RBAC統合",
+        "key rotation policy",
+        "least privilege",
+        "admin console governance"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+        "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+      ],
+      "confidence": "high",
+      "under_the_radar": false,
+      "fact_basis": "OpenAI公式API changelogおよびEnterprise/Business release notes",
+      "analysis": "Agent導入時のIAMとcredential governanceをOpenAI側の機能で標準化しやすくなった。"
+    },
+    {
+      "product": "Responses API",
+      "event": "Prompt Cache Diagnostics",
+      "event_type": "cost_optimization",
+      "summary": "cache reuseを以前のresponseと比較し、cache miss理由と改善ガイダンスを確認できる機能がGA。",
+      "enterprise_implication": "長いsystem promptやtool schemaを持つAgentで、入力トークンコストを定量的に最適化できる。",
+      "use_cases": [
+        "RAG Agent",
+        "共通業務定義を持つAgent",
+        "高頻度APIワークロード"
+      ],
+      "technical_implications": [
+        "stable prefix設計",
+        "prompt ordering最適化",
+        "cache hit監視"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://openai.com/index/practical-guide-building-gpt-6/"
+      ],
+      "confidence": "high",
+      "under_the_radar": true,
+      "why_overlooked": "モデル発表に比べ地味なAPI運用機能としてchangelogに掲載されているため。",
+      "who_benefits": [
+        "AI platform team",
+        "FinOps",
+        "バックエンド開発者"
+      ],
+      "practical_example": "共通instruction/tool schemaをprefixに固定し、Diagnosticsでcache missを検出してprompt構造を修正する。",
+      "fact_basis": "OpenAI公式API changelogとGPT-6 production guide",
+      "analysis": "本番Agentの単価改善に直接効くため、ニュース性以上に実務価値が高い。"
+    },
+    {
+      "product": "OpenAI API Platform",
+      "event": "API key作成ガバナンスとexpiration enforcement",
+      "event_type": "security_control",
+      "summary": "service-account keyのみ許可、user-owned keyのみ許可、新規key作成禁止などの制御と、key最大寿命の強制が追加された。",
+      "enterprise_implication": "長寿命の個人API keyがCI/CDやアプリに残るリスクを減らせる。",
+      "use_cases": [
+        "Production credential policy",
+        "CI/CD service account",
+        "定期key rotation"
+      ],
+      "technical_implications": [
+        "credential lifecycle management",
+        "service account標準化",
+        "org/project policy inheritance"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "confidence": "high",
+      "under_the_radar": true,
+      "why_overlooked": "Platform設定の更新であり、新モデルのような大きな告知対象になりにくいため。",
+      "who_benefits": [
+        "Platform Engineering",
+        "Security",
+        "IAM管理者"
+      ],
+      "practical_example": "Productionではservice accountのみ、最大90日というkey policyを定義し、rotationを自動化する。",
+      "fact_basis": "OpenAI公式API changelog",
+      "analysis": "企業API運用の基本統制として優先度が高い。"
+    },
+    {
+      "product": "ChatGPT Admin",
+      "event": "Model Test",
+      "event_type": "admin_tooling",
+      "summary": "管理者が特定メンバーのモデルアクセスと、そのアクセスを決める設定を確認できる。",
+      "enterprise_implication": "モデル利用不可の問い合わせをrole/workspace/plan/policy別に切り分けやすくなる。",
+      "use_cases": [
+        "新モデル展開前確認",
+        "Service Desk troubleshooting",
+        "RBAC検証"
+      ],
+      "technical_implications": [
+        "access diagnostics",
+        "role policy validation"
+      ],
+      "sources": [
+        "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+        "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+      ],
+      "confidence": "high",
+      "under_the_radar": true,
+      "why_overlooked": "管理者向けトラブルシューティング機能で、一般ユーザー向けニュースになりにくいため。",
+      "who_benefits": [
+        "ChatGPT管理者",
+        "IT Service Desk",
+        "AI CoE"
+      ],
+      "practical_example": "部署展開前に代表ユーザーをModel Testで確認し、RBAC設定ミスを先に修正する。",
+      "fact_basis": "OpenAI公式Business/Enterprise release notes",
+      "analysis": "大規模展開時のサポートコスト削減に有用。"
+    },
+    {
+      "product": "Responses API",
+      "event": "Mid-turn steering + Async tool calling",
+      "event_type": "agent_control",
+      "summary": "長時間実行中に追加指示を送るmid-turn steeringと、tool処理待ち中に独立作業を進めるasync tool callingが提供されている。",
+      "enterprise_implication": "長時間Agentを開始時プロンプトだけに固定せず、人間が途中介入しながら効率的に運用できる。",
+      "use_cases": [
+        "長時間コード解析",
+        "非同期CI連携",
+        "調査中の優先順位変更"
+      ],
+      "technical_implications": [
+        "WebSocket steering",
+        "dependency-aware parallelism",
+        "human-in-the-loop"
+      ],
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://openai.com/index/practical-guide-building-gpt-6/"
+      ],
+      "confidence": "high",
+      "under_the_radar": true,
+      "why_overlooked": "長時間Agentの制御プリミティブであり、単独では目立つ製品発表になりにくいため。",
+      "who_benefits": [
+        "Agent platform開発者",
+        "社内自動化チーム"
+      ],
+      "practical_example": "CIテストを待つ間に文書更新を進め、要件変更が入ったらsteeringで実行中Agentの方向を修正する。",
+      "fact_basis": "OpenAI公式API changelogとGPT-6 guide",
+      "analysis": "Agentを対話的・継続的に運用するための重要な制御機構。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "DevDay 2026 Recap",
+      "url": "https://openai.com/index/devday-2026-recap/"
+    },
+    {
+      "title": "OpenAI API Changelog",
+      "url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "title": "A model guide for the GPT-6 family",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6/"
+    },
+    {
+      "title": "ChatGPT Enterprise and Edu release notes",
+      "url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes"
+    },
+    {
+      "title": "ChatGPT Business release notes",
+      "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+    },
+    {
+      "title": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}
