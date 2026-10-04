@@ -1,0 +1,186 @@
+{
+  "id": "openai-brief-2026-10-04",
+  "date": "2026-10-04",
+  "coverage_window": {
+    "start": "2026-10-03",
+    "end": "2026-10-04"
+  },
+  "generated_at": "2026-10-04T00:00:00+09:00",
+  "language": "ja",
+  "source_count": 6,
+  "developments": [
+    {
+      "product": "GPT-6 Sol / Luna",
+      "event": "GPT-6 SolとLuna公開",
+      "event_type": "model_release",
+      "summary": "professional work・coding・computer useを対象にcost/performanceを改善するGPT-6 Sol/Lunaが公開された。",
+      "enterprise_implication": "Luna/Sol/Astraをtask complexityとcostで振り分けるmodel routingが重要になる。",
+      "use_cases": [
+        "大量分類",
+        "coding",
+        "computer use",
+        "professional work"
+      ],
+      "technical_implications": [
+        "model routing",
+        "reasoning effort",
+        "cost-aware orchestration"
+      ],
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": false
+    },
+    {
+      "product": "Dots",
+      "event": "always-on agentsを発表",
+      "event_type": "agent_product",
+      "summary": "ユーザーに代わり継続的に仕事を処理するalways-on agentとしてDotsが発表された。",
+      "enterprise_implication": "trigger、permission、approval、auditをagent architectureの独立レイヤーとして設計する必要がある。",
+      "use_cases": [
+        "継続監視",
+        "定期業務",
+        "proactive workflow"
+      ],
+      "technical_implications": [
+        "persistent state",
+        "event trigger",
+        "human approval"
+      ],
+      "sources": [
+        "https://openai.com/index/introducing-dots/"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": false
+    },
+    {
+      "product": "ChatGPT Enterprise / API",
+      "event": "Albertsonsがenterprise/customer workflowへ利用拡大",
+      "event_type": "customer_scenario",
+      "summary": "Albertsonsは社員向けChatGPT Enterpriseと顧客向けAPI利用を拡大している。",
+      "enterprise_implication": "employee work layerとcustomer application layerを共通AI ecosystemで構築できる。",
+      "use_cases": [
+        "basket building",
+        "repeat purchase",
+        "meal planning",
+        "employee productivity"
+      ],
+      "technical_implications": [
+        "ChatGPT/API二層構成"
+      ],
+      "sources": [
+        "https://openai.com/index/albertsons-reimagining-retail/"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": false
+    },
+    {
+      "product": "Codex / GPT-5.6",
+      "event": "Chatham Financialがtrade validationを30分から4分未満へ短縮",
+      "event_type": "customer_scenario",
+      "summary": "CodexとGPT-5.6を利用して内部・顧客向けtoolを構築し、trade validation workflowを大幅短縮した。",
+      "enterprise_implication": "coding agentはdeveloper productivityだけでなく業務プロセス再設計の速度を上げる。",
+      "use_cases": [
+        "workflow reengineering",
+        "internal tools",
+        "capital markets"
+      ],
+      "technical_implications": [
+        "domain expert + coding agent"
+      ],
+      "sources": [
+        "https://openai.com/index/chatham-financial/"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": false
+    },
+    {
+      "product": "GPT-6 API",
+      "event": "prompt caching改善",
+      "event_type": "cost_optimization",
+      "summary": "長時間agentで共有contextを再利用し、cached input tokenの大幅discountを得られるprompt cachingが強化された。",
+      "enterprise_implication": "persistent agentのtoken costとlatencyを下げるarchitecture上の重要要素になる。",
+      "use_cases": [
+        "long-running agents",
+        "coding sessions",
+        "RAG"
+      ],
+      "technical_implications": [
+        "stable prefix",
+        "cache-aware prompt design"
+      ],
+      "sources": [
+        "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": true,
+      "why_overlooked": "model発表より目立たないcost/architecture機能だから。",
+      "who_benefits": [
+        "AI platform team",
+        "backend engineer",
+        "FinOps"
+      ],
+      "practical_example": "共通instruction/tool schemaをstable prefixに固定しcache reuseを最大化する。"
+    },
+    {
+      "product": "Agent Builder / Evals",
+      "event": "2026-11-30終了予定",
+      "event_type": "deprecation",
+      "summary": "Agent BuilderとEvalsは11月30日以降利用不可となり、Agents SDKまたはWorkspace Agentsへの移行が推奨されている。",
+      "enterprise_implication": "既存workflowのinventoryとmigrationを早期に実施する必要がある。",
+      "use_cases": [
+        "platform migration"
+      ],
+      "technical_implications": [
+        "Agents SDK migration",
+        "Workspace Agents migration"
+      ],
+      "sources": [
+        "https://openai.com/index/introducing-agentkit/",
+        "https://developers.openai.com/api/docs/deprecations"
+      ],
+      "confidence": "high",
+      "language": "ja",
+      "under_the_radar": true,
+      "why_overlooked": "新機能ではなくmigration noticeのため。",
+      "who_benefits": [
+        "AI CoE",
+        "platform owner",
+        "agent developer"
+      ],
+      "practical_example": "Agent Builder workflowを棚卸しし11月前に移行する。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    },
+    {
+      "title": "Introducing dots",
+      "url": "https://openai.com/index/introducing-dots/"
+    },
+    {
+      "title": "Better prompt caching for GPT-6",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
+    },
+    {
+      "title": "Albertsons Companies",
+      "url": "https://openai.com/index/albertsons-reimagining-retail/"
+    },
+    {
+      "title": "Chatham Financial",
+      "url": "https://openai.com/index/chatham-financial/"
+    },
+    {
+      "title": "OpenAI API changelog/deprecations",
+      "url": "https://developers.openai.com/api/docs/changelog"
+    }
+  ]
+}
